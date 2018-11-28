@@ -14314,6 +14314,23 @@ void manage_inactivity(const bool ignore_stepper_queue/*=false*/) {
 
   planner.check_axes_activity();
 }
+/**
+ * FAN2 functionality copied from original anycubic firmware
+ */
+#define MYFAN2_PIN  44
+
+void SetUpFAN2_PIN()
+{
+    SET_OUTPUT(MYFAN2_PIN);
+    WRITE(MYFAN2_PIN, LOW);  
+}
+
+void Fan2Scan()
+{
+  if(thermalManager.degHotend(active_extruder)>60)
+  WRITE(MYFAN2_PIN, HIGH);
+  else WRITE(MYFAN2_PIN, LOW);
+}
 
 /**
  * Standard idle routine keeps the machine alive
@@ -14328,6 +14345,8 @@ void idle(
   #endif
 
   lcd_update();
+
+  Fan2Scan();
 
   host_keepalive();
 
@@ -14534,6 +14553,8 @@ void setup() {
   stepper.init();           // Init stepper. This enables interrupts!
 
   servo_init();             // Initialize all servos, stow servo probe
+
+  SetUpFAN2_PIN();
 
   #if HAS_PHOTOGRAPH
     OUT_WRITE(PHOTOGRAPH_PIN, LOW);

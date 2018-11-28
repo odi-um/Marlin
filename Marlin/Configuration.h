@@ -361,7 +361,7 @@
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 #if ENABLED(PIDTEMP)
-  //#define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
+  #define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
   //#define PID_DEBUG // Sends debug data to the serial port.
   //#define PID_OPENLOOP 1 // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
@@ -388,9 +388,9 @@
   //#define DEFAULT_Kd 440
   
   // AnyCubic Kossel: DaHai - From Manual PID Tune (do your own as it could be different)
-  #define  DEFAULT_Kp 12.87
-  #define  DEFAULT_Ki 0.84
-  #define  DEFAULT_Kd 49.31
+  #define  DEFAULT_Kp 22.2
+  #define  DEFAULT_Ki 1.08
+  #define  DEFAULT_Kd 114
 
 #endif // PIDTEMP
 
@@ -553,12 +553,12 @@
   #define DELTA_DIAGONAL_ROD 218.0 // mm. DaHai: From Anycubic Kossle source  
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 334.88 // // mm. DaHai: This will be overriden and set in EEPROM when saving Auto Calibrate results
+  #define DELTA_HEIGHT 335.00 // // mm. DaHai: This will be overriden and set in EEPROM when saving Auto Calibrate results
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 98.7 //mm. DaHai: This will be overriden and set in EEPROM when saving Auto Calibrate results
+  #define DELTA_RADIUS 98.40 //mm. DaHai: This will be overriden and set in EEPROM when saving Auto Calibrate results
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
@@ -1359,8 +1359,8 @@
 #define PREHEAT_1_TEMP_BED     65
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
-#define PREHEAT_2_TEMP_HOTEND 240 // DaHai: This is typically for ABS, set to your common temperatures 
-#define PREHEAT_2_TEMP_BED    110
+#define PREHEAT_2_TEMP_HOTEND 235 // DaHai: This is typically for ABS, set to your common temperatures 
+#define PREHEAT_2_TEMP_BED     60
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
 /**
