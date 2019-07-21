@@ -28,7 +28,6 @@
   #define BOARD_NAME "Anycubic RAMPS 1.3"
 #endif
 
-#define IS_RAMPS_EFB
 #define RAMPS_D9_PIN         44
 #define FAN2_PIN              9
 #define ORIG_E0_AUTO_FAN_PIN  9

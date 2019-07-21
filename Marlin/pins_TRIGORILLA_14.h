@@ -30,7 +30,9 @@
 
 #define IS_RAMPS_EFB
 
-#define FAN2_PIN             44
+#define FAN_PIN               7   // Usually the part cooling fan (original 9)
+#define FAN1_PIN              9   // drivers (original 7)
+#define FAN2_PIN             44   // hotend
 #define ORIG_E0_AUTO_FAN_PIN 44
 
 #include "pins_RAMPS.h"
