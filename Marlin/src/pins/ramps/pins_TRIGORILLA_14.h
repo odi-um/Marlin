@@ -46,9 +46,9 @@
 //
 // Heaters / Fans
 //
-#define FAN0_PIN                               9  // FAN0
-#define FAN1_PIN                               7  // FAN1
-#define FAN2_PIN                              44  // FAN2
+#define FAN0_PIN                               7  // Usually the part cooling fan (original 9)
+#define FAN1_PIN                               9  // drivers (original 7)
+#define FAN2_PIN                              44  // hotend
 #ifndef E0_AUTO_FAN_PIN
   #define E0_AUTO_FAN_PIN               FAN2_PIN
 #endif

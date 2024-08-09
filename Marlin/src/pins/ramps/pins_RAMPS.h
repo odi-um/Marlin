@@ -64,19 +64,19 @@
 //
 #ifndef SERVO0_PIN
   #ifdef IS_RAMPS_13
-    #define SERVO0_PIN                         7
+    #define SERVO0_PIN                        -1
   #else
-    #define SERVO0_PIN                        11
+    #define SERVO0_PIN                        -1
   #endif
 #endif
 #ifndef SERVO1_PIN
-  #define SERVO1_PIN                           6
+  #define SERVO1_PIN                          -1
 #endif
 #ifndef SERVO2_PIN
-  #define SERVO2_PIN                           5
+  #define SERVO2_PIN                          -1
 #endif
 #ifndef SERVO3_PIN
-  #define SERVO3_PIN                           4
+  #define SERVO3_PIN                          -1
 #endif
 
 //
@@ -117,10 +117,10 @@
 #endif
 #ifndef Y_STOP_PIN
   #ifndef Y_MIN_PIN
-    #define Y_MIN_PIN                         14  // Y-
+    #define Y_MIN_PIN                         12  // Y- moved to SERVO to free UART3
   #endif
   #ifndef Y_MAX_PIN
-    #define Y_MAX_PIN                         15  // Y+
+    #define Y_MAX_PIN                         11  // Y+ moved to SERVO to free UART3
   #endif
 #endif
 #ifndef Z_STOP_PIN
